@@ -1,0 +1,59 @@
+package gr11review.test2;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+import gr11review.part2.Utility;
+import java.io.*;
+
+public class FileIO1Test {
+
+    private String filePath = new File("").getAbsolutePath();
+    private final String absPath = filePath+ "/src/gr11review/test2/";
+
+    /**
+     * Test general access to the file
+     */
+    @Test
+    void testSignature() throws IOException{
+        assertTrue((Utility.longestWord(absPath+"Review2_3Test_1.txt").length() >=0 ));
+    }
+
+    /**
+     * Test general case, longest word is somewhere in the middle
+     */
+    @Test
+    void testMiddle()throws IOException{
+        assertEquals("conservation", Utility.longestWord(absPath+"Review2_3Test_1.txt"));
+
+    }
+
+    /**
+     * Test file only has one word
+     */
+    @Test
+    void testSingle() throws IOException{
+        assertEquals("x", Utility.longestWord(absPath+"Review2_3Test_2.txt"));
+    }
+    
+    /**
+     * Test more than one occurrences of a longest word length, returns the last word
+     */
+    @Test
+    void testDouble() throws IOException{
+        assertEquals("preservation", Utility.longestWord(absPath+"Review2_3Test_3.txt"));
+    }
+
+    /**
+     * Test longest word is the last word in the file 
+     */
+    @Test
+    void testEnd() throws IOException{
+        assertEquals("conservation", Utility.longestWord(absPath+"Review2_3Test_4.txt"));
+    }
+
+}
+
+
+
