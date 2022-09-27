@@ -25,7 +25,7 @@ public class Utility {
         
         System.out.println(longestWord("words.txt"));
        
-        
+        //array 3
         int myarray[] = {2,0,2,2, 0};
 
         System.out.println(Arrays.toString(zeroFront(myarray)));
