@@ -24,7 +24,9 @@ public class Utility {
         
         System.out.println(longestWord("words.txt"));
        
+        //array3
 
+        System.out.println(zeroFront([1, 1, 0, 0]));
 
     }
 
@@ -69,11 +71,34 @@ public class Utility {
         }
 
         return strLongestString;
-
-
     }
 
 
+    public static int[] zeroFront(int[] nums) {
+
+        int[] arrayIntegers = new int[nums.length];
+        int counter = 0;
+        for(int x = 0; x < nums.length; x++) {
+            if(nums[x] == 0) {
+                arrayIntegers[counter] = 0;
+                counter++;
+            } 
+        }
+
+        for(int y = counter + 1; y < nums.length - counter; y++) {
+
+            if(nums[y] != 0) {
+                arrayIntegers[y] = nums[y];
+            }
+
+        }
+
+        return arrayIntegers;
+
+
+
+
+    }
 
 
     
