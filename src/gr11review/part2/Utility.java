@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 
@@ -24,9 +25,11 @@ public class Utility {
         
         System.out.println(longestWord("words.txt"));
        
-        //array3
+        
+        int myarray[] = {2,0,2,2, 0};
 
-        System.out.println(zeroFront([1, 1, 0, 0]));
+        System.out.println(Arrays.toString(zeroFront(myarray)));
+        
 
     }
 
@@ -82,13 +85,13 @@ public class Utility {
             if(nums[x] == 0) {
                 arrayIntegers[counter] = 0;
                 counter++;
-            } 
+            }
         }
 
-        for(int y = counter + 1; y < nums.length - counter; y++) {
+        for(int y = 0; y < nums.length; y++) {
 
             if(nums[y] != 0) {
-                arrayIntegers[y] = nums[y];
+                arrayIntegers[counter++] = nums[y];
             }
 
         }
