@@ -36,6 +36,12 @@ public class Utility {
         boolean arrayTest = linearIn(arrayOuter, arrayInner);
         System.out.println(arrayTest);
 
+
+        //arrays 7
+        int array[][]={{1,2,3}, {4,5,6}};
+        System.out.println(array.length);
+
+        System.out.println(Arrays.deepToString(reverse(array)));
     }
 
     public static int sumNumbers(String str) {
@@ -132,15 +138,14 @@ public class Utility {
     public static int[][] reverse(int[][] arr) {
 
         int[][] outputArray = new int[arr.length][arr[0].length];
-        int rowCounter = 0;
-        int columnCounter = 0;
+        int rowCounter = arr.length; //2
+        int columnCounter = arr[0].length; //3
 
-        for(int x = arr.length; x >= 0; x--) {
-            for(int y = arr[0].length; y>0; y--) {
-                outputArray[rowCounter][columnCounter] = arr[x][y];
-                columnCounter++;
+      
+        for(int x = 0; x < arr.length; x++) {
+            for(int y = 0; y < arr[0].length; y++) {
+                outputArray[arr.length-1-x][arr[0].length-1-y] = arr[x][y];
             }
-            rowCounter++;
         }
 
         return outputArray;
