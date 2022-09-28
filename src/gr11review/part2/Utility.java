@@ -30,6 +30,11 @@ public class Utility {
 
         System.out.println(Arrays.toString(zeroFront(myarray)));
         
+        //array 4
+        int arrayOuter[] = {1, 2, 4, 5};
+        int arrayInner[] = {2, 4, 5};
+        boolean arrayTest = linearIn(arrayOuter, arrayInner);
+        System.out.println(arrayTest);
 
     }
 
@@ -62,7 +67,6 @@ public class Utility {
             Scanner myScanner = new Scanner(new File(filenametxt));
             while(myScanner.hasNext()) {
                 tempstring = myScanner.nextLine();
-
                 if(tempstring.length() > lettercount) {
                     strLongestString = tempstring;
                     lettercount += strLongestString.length();
@@ -96,12 +100,32 @@ public class Utility {
 
         }
 
-        return arrayIntegers;
+        return arrayIntegers; 
 
+    }
 
+    public static boolean linearIn(int[] outer, int[] inner){
+         int numofInner = 0;
+
+        for(int charInner = 0; charInner < inner.length; charInner++) {
+            for(int charOuter = 0; charOuter < outer.length; charOuter++) {
+                if(inner[charInner] == outer[charOuter]) {
+                    numofInner++;
+                }else {
+                    continue;
+                }
+            }
+        }
+
+        if (numofInner == inner.length) {
+            return true;
+        }else {
+            return false; 
+        }
 
 
     }
+
 
 
     
