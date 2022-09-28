@@ -127,6 +127,26 @@ public class Utility {
     }
 
 
+    //arrays 7
+
+    public static int[][] reverse(int[][] arr) {
+
+        int[][] outputArray = new int[arr.length][arr[0].length];
+        int rowCounter = 0;
+        int columnCounter = 0;
+
+        for(int x = arr.length; x >= 0; x--) {
+            for(int y = arr[0].length; y>0; y--) {
+                outputArray[rowCounter][columnCounter] = arr[x][y];
+                columnCounter++;
+            }
+            rowCounter++;
+        }
+
+        return outputArray;
+
+    }
+
 
     
 }
