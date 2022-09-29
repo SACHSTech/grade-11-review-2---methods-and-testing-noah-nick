@@ -44,18 +44,30 @@ public class Utility {
         System.out.println(Arrays.deepToString(reverse(array)));
     }
 
-    public static int sumNumbers(String str) {
-       String stringNumber = "0";
 
+
+    /**
+     * 
+     * @param str Input string provided by user that will be used to add numbesr from 
+     * @return Extracts all whole numbers from a given string and returns the sum 
+     */
+    public static int sumNumbers(String str) {
+
+        //declaring variables
+       String stringNumber = "0";
        int sum = 0;
 
+       //for each character in the string
        for(int x = 0; x < str.length(); x++) {
         
+            //if the character is a digit, append it to the stringNumber variable
+
             if(Character.isDigit(str.charAt(x))){
                 stringNumber += str.charAt(x);
             } else {
-                sum += Integer.parseInt(stringNumber);
+                //once consecutive integers are no longer detected, add to the sum and reset the string variable
 
+                sum += Integer.parseInt(stringNumber);
                 stringNumber = "0";
             }
        }
@@ -64,6 +76,12 @@ public class Utility {
     }
 
 
+
+    /**
+     * 
+     * @param filenametxt name of the file given by user to search through
+     * @return Returns the complete string value of the longest word on any given line in the provided txt file
+     */
     public static String longestWord(String filenametxt) {
         int lettercount = 0;
         String tempstring = "";

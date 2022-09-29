@@ -19,9 +19,15 @@ public class UtilityTest{
         assertEquals(0, Utility.sumNumbers("werouhweruihwr"));
     }
 
+    @Test
+    public void sumNumbersTest3() {
+        assertEquals(44, Utility.sumNumbers("44"));
+
+    }
+
+
     
-
-
+    
 
 
 }
