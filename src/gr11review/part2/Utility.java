@@ -38,7 +38,7 @@ public class Utility {
 
 
         //arrays 7
-        int array[][]={{1,2,3}, {4,5,6}};
+        int array[][]={{1,2,3}, {4,5,6}, {7,8,9}};
         System.out.println(array.length);
 
         System.out.println(Arrays.deepToString(reverse(array)));
