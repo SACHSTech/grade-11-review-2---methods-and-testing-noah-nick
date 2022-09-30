@@ -101,6 +101,42 @@ public class UtilityTest{
 
     }
 
+    /**
+     * Simple test validating that code can tell when all inner numbers appear in outer
+     * 
+     */
+    @Test
+    public void linearInTest1() {
+        assertEquals(true, Utility.linearIn(new int[]{2, 3, 4, 5}, new int[]{3, 4}));
+    }
+
+    /**
+     * Testing that a false response is recieved when no inner numbers appear in outer
+     */
+    @Test
+    public void linearInTest2() {
+        assertEquals(false, Utility.linearIn(new int[]{2, 3, 4, 5}, new int[]{6, 7}));
+    }
+
+    /**
+     * Tests that a false response is recieved when only one inner number appears in outer 
+     */
+
+    @Test
+    public void linearInTest3() {
+        assertEquals(false, Utility.linearIn(new int[]{2, 3, 4, 5}, new int[]{3, 6}));
+    }
+
+    /**
+     * Ensuring program works with large amount of outer values that still are all satisfied by inner
+     * 
+     */
+    @Test
+    public void linearInTest4() {
+        assertEquals(true, Utility.linearIn(new int[]{2, 3, 4, 5, 6, 7, 8, 9}, new int[]{3, 4, 5, 6}));
+    }
+
+
     
 
 }
