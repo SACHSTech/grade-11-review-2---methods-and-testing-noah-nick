@@ -15,33 +15,14 @@ public class Utility {
     
     public static void main(String[] args) {
        
-        //Methods 2
-
-        int test = sumNumbers("abv123av2b");
-        System.out.println(test);
+   
 
         //fileio 1
 
         
-        System.out.println(longestWord("words.txt"));
+        System.out.println(longestWord("/Users/noah/github-classroom/SACHSTech/grade-11-review-2---methods-and-testing-noah-nick/src/gr11review/part2/wordsdouble.txt"));
        
-        //array 3
-        int myarray[] = {2,0,2,2, 0};
-
-        System.out.println(Arrays.toString(zeroFront(myarray)));
-        
-        //array 4
-        int arrayOuter[] = {1, 2, 4, 5};
-        int arrayInner[] = {2, 4, 5};
-        boolean arrayTest = linearIn(arrayOuter, arrayInner);
-        System.out.println(arrayTest);
-
-
-        //arrays 7
-        int array[][]={{1,2,3}, {4,5,6}, {7,8,9}};
-        System.out.println(array.length);
-
-        System.out.println(Arrays.deepToString(reverse(array)));
+      
     }
 
 
@@ -86,21 +67,21 @@ public class Utility {
         int lettercount = 0;
         String tempstring = "";
         String strLongestString = "";
-        try{
+        BufferedReader reader;
 
-            Scanner myScanner = new Scanner(new File(filenametxt));
-            while(myScanner.hasNext()) {
-                tempstring = myScanner.nextLine();
+        try{
+            reader = new BufferedReader(new FileReader(filenametxt));
+            tempstring = reader.readLine();
+            while(tempstring != null) {
                 if(tempstring.length() > lettercount) {
                     strLongestString = tempstring;
                     lettercount += strLongestString.length();
                 }
-            }
-
-        } catch (FileNotFoundException e) {
+                tempstring = reader.readLine();
+            }            
+        } catch (IOException e) {
             System.out.println(e);
         }
-
         return strLongestString;
     }
 
