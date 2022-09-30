@@ -20,8 +20,7 @@ public class Utility {
         //fileio 1
 
         
-        System.out.println(longestWord("/Users/noah/github-classroom/SACHSTech/grade-11-review-2---methods-and-testing-noah-nick/src/gr11review/part2/wordsdouble.txt"));
-       
+        System.out.println(Arrays.toString(zeroFront(new int[]{2, 3, 0, 5, 0})));
       
     }
 

@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.IOError;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Arrays;
 
 import org.junit.jupiter.api.Test;
 
@@ -74,7 +75,32 @@ public class UtilityTest{
     }
 
 
- 
+    /**
+     * Tests standard case with moving zeros to the front
+     */
+    @Test
+    public void zeroFrontTest1() {
+       int[] nums = {2, 3, 0, 5, 0};
+        assertTrue(Arrays.equals(new int[]{0, 0, 2, 3, 5}, Utility.zeroFront(nums)));
+    }
 
+    /**
+     * Tests special case where array contains no zeroes, should return original array untouched
+     */
+    @Test
+    public void zeroFrontTest2() {
+        assertTrue(Arrays.equals(new int[]{2, 3, 4,5 }, Utility.zeroFront(new int[] {2, 3, 4, 5})));
+    }
+
+    /**
+     * Validates that an array with the zeros already at the front is returned untouched 
+     */
+    @Test
+    public void zeroFrontTest3() {
+        assertTrue(Arrays.equals(new int[]{0, 0, 2, 3}, Utility.zeroFront(new int[]{0, 0, 2, 3})));
+
+    }
+
+    
 
 }
