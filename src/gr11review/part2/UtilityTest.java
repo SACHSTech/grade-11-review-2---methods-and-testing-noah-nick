@@ -137,6 +137,21 @@ public class UtilityTest{
     }
 
 
-    
+    /**
+     * Tests that a standard array can be properly reversed 
+     */
+    @Test
+    public void reverseTest1() {
+        assertTrue(Arrays.deepEquals(new int[][]{{6, 5 ,4}, {3, 2, 1}}, Utility.reverse(new int[][]{{1, 2, 3}, {4, 5, 6}})));
+    }
 
+    /**
+     * Tests that reversing functionality still works with large 2d arrays consiting of 3 rows.
+     */
+    @Test
+    public void reverseTest2(){
+        assertTrue(Arrays.deepEquals(new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}, Utility.reverse(new int[][]{{9, 8, 7}, {6, 5, 4}, {3, 2, 1}})));
+    }
+
+    
 }
