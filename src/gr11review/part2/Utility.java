@@ -65,27 +65,38 @@ public class Utility {
      * @return Returns the word as a string
      */
     public static String longestWord(String filenametxt) {
+
+        //declaring variables
         int lettercount = 0;
         String tempstring = "";
         String strLongestString = "";
         BufferedReader reader;
 
+        //try catch sttement for the bufferedreader
         try{
+
             reader = new BufferedReader(new FileReader(filenametxt));
+            
+            //gets the next line in the file
             tempstring = reader.readLine();
             while(tempstring != null) {
+
+                //compare letter counts
                 if(tempstring.length() > lettercount) {
+                    
+                    //set longest string if letter count is greater
                     strLongestString = tempstring;
                     lettercount += strLongestString.length();
                 }
                 tempstring = reader.readLine();
-            }            
+            } 
         } catch (IOException e) {
+
+            //catch and print any IOException
             System.out.println(e);
         }
         return strLongestString;
     }
-
 
 
     /**
@@ -95,8 +106,12 @@ public class Utility {
      * @return Array with zeroes at front followed by original nonzero values
      */
     public static int[] zeroFront(int[] nums) {
+
+        //creating a new array, declaring variables
         int[] arrayIntegers = new int[nums.length];
         int counter = 0;
+
+        //for loop to check array for 0s and move them to the front, counting how many zeroes have been placed
         for(int x = 0; x < nums.length; x++) {
             if(nums[x] == 0) {
                 arrayIntegers[counter] = 0;
@@ -104,8 +119,8 @@ public class Utility {
             }
         }
 
+        //setting the rest of the values to be the proceeding numbers
         for(int y = 0; y < nums.length; y++) {
-
             if(nums[y] != 0) {
                 arrayIntegers[counter++] = nums[y];
             }
@@ -127,8 +142,12 @@ public class Utility {
     public static boolean linearIn(int[] outer, int[] inner){
          int numofInner = 0;
 
+
+        //nested for loops to iterate through each loop
         for(int charInner = 0; charInner < inner.length; charInner++) {
             for(int charOuter = 0; charOuter < outer.length; charOuter++) {
+                
+                //checks if the proper values appear
                 if(inner[charInner] == outer[charOuter]) {
                     numofInner++;
                 }else {
@@ -155,11 +174,12 @@ public class Utility {
      */
     public static int[][] reverse(int[][] arr) {
 
+        //declare variables, create new array
         int[][] outputArray = new int[arr.length][arr[0].length];
         int rowCounter = arr.length; //2
         int columnCounter = arr[0].length; //3
 
-      
+        //nested for loop to reverse the arrays, placing values in the correct spots
         for(int x = 0; x < arr.length; x++) {
             for(int y = 0; y < arr[0].length; y++) {
                 outputArray[arr.length-1-x][arr[0].length-1-y] = arr[x][y];
@@ -168,8 +188,5 @@ public class Utility {
 
         return outputArray;
 
-    }
-
-
-    
+    }   
 }
