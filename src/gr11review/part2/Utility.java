@@ -17,7 +17,6 @@ public class Utility {
        
    
 
-        //fileio 1
 
         
         System.out.println(Arrays.toString(zeroFront(new int[]{2, 3, 0, 5, 0})));
@@ -34,26 +33,26 @@ public class Utility {
      */
     public static int sumNumbers(String str) {
 
-        //declaring variables
+        // declaring variables
        String stringNumber = "0";
-       int sum = 0;
+       int intSum = 0;
 
-       //for each character in the string
+       // for each character in the string
        for(int x = 0; x < str.length(); x++) {
         
-            //if the character is a digit, append it to the stringNumber variable
+            // if the character is a digit, append it to the stringNumber variable
 
             if(Character.isDigit(str.charAt(x))){
                 stringNumber += str.charAt(x);
             } else {
-                //once consecutive integers are no longer detected, add to the sum and reset the string variable
+                // once consecutive integers are no longer detected, add to the sum and reset the string variable
 
-                sum += Integer.parseInt(stringNumber);
+                intSum += Integer.parseInt(stringNumber);
                 stringNumber = "0";
             }
        }
         
-       return sum + Integer.parseInt(stringNumber);
+       return intSum + Integer.parseInt(stringNumber);
     }
 
 
@@ -66,33 +65,33 @@ public class Utility {
      */
     public static String longestWord(String filenametxt) {
 
-        //declaring variables
-        int lettercount = 0;
-        String tempstring = "";
+        // declaring variables
+        int intLetterCount = 0;
+        String strTemp = "";
         String strLongestString = "";
         BufferedReader reader;
 
-        //try catch sttement for the bufferedreader
+        // try catch sttement for the bufferedreader
         try{
 
             reader = new BufferedReader(new FileReader(filenametxt));
             
-            //gets the next line in the file
-            tempstring = reader.readLine();
-            while(tempstring != null) {
+            // gets the next line in the file
+            strTemp = reader.readLine();
+            while(strTemp != null) {
 
-                //compare letter counts
-                if(tempstring.length() > lettercount) {
+                // compare letter counts
+                if(strTemp.length() > intLetterCount) {
                     
-                    //set longest string if letter count is greater
-                    strLongestString = tempstring;
-                    lettercount += strLongestString.length();
+                    // set longest string if letter count is greater
+                    strLongestString = strTemp;
+                    intLetterCount += strLongestString.length();
                 }
-                tempstring = reader.readLine();
+                strTemp = reader.readLine();
             } 
         } catch (IOException e) {
 
-            //catch and print any IOException
+            // catch and print any IOException
             System.out.println(e);
         }
         return strLongestString;
@@ -107,22 +106,22 @@ public class Utility {
      */
     public static int[] zeroFront(int[] nums) {
 
-        //creating a new array, declaring variables
+        // creating a new array, declaring variables
         int[] arrayIntegers = new int[nums.length];
-        int counter = 0;
+        int intCounter = 0;
 
-        //for loop to check array for 0s and move them to the front, counting how many zeroes have been placed
+        // for loop to check array for 0s and move them to the front, counting how many zeroes have been placed
         for(int x = 0; x < nums.length; x++) {
             if(nums[x] == 0) {
-                arrayIntegers[counter] = 0;
-                counter++;
+                arrayIntegers[intCounter] = 0;
+                intCounter++;
             }
         }
 
-        //setting the rest of the values to be the proceeding numbers
+        // setting the rest of the values to be the proceeding numbers
         for(int y = 0; y < nums.length; y++) {
             if(nums[y] != 0) {
-                arrayIntegers[counter++] = nums[y];
+                arrayIntegers[intCounter++] = nums[y];
             }
 
         }
@@ -140,23 +139,23 @@ public class Utility {
      * @return Returns boolean true if all the characters appear, false if they do not. 
      */
     public static boolean linearIn(int[] outer, int[] inner){
-         int numofInner = 0;
+         int intInner = 0;
 
 
-        //nested for loops to iterate through each loop
+        // nested for loops to iterate through each loop
         for(int charInner = 0; charInner < inner.length; charInner++) {
             for(int charOuter = 0; charOuter < outer.length; charOuter++) {
                 
-                //checks if the proper values appear
+                // checks if the proper values appear
                 if(inner[charInner] == outer[charOuter]) {
-                    numofInner++;
+                    intInner++;
                 }else {
                     continue;
                 }
             }
         }
 
-        if (numofInner == inner.length) {
+        if (intInner == inner.length) {
             return true;
         }else {
             return false; 
@@ -174,19 +173,18 @@ public class Utility {
      */
     public static int[][] reverse(int[][] arr) {
 
-        //declare variables, create new array
-        int[][] outputArray = new int[arr.length][arr[0].length];
-        int rowCounter = arr.length; //2
-        int columnCounter = arr[0].length; //3
+        // declare variables, create new array
+        int[][] arrOutput = new int[arr.length][arr[0].length];
+    
 
-        //nested for loop to reverse the arrays, placing values in the correct spots
+        // nested for loop to reverse the arrays, placing values in the correct spots
         for(int x = 0; x < arr.length; x++) {
             for(int y = 0; y < arr[0].length; y++) {
-                outputArray[arr.length-1-x][arr[0].length-1-y] = arr[x][y];
+                arrOutput[arr.length-1-x][arr[0].length-1-y] = arr[x][y];
             }
         }
 
-        return outputArray;
+        return arrOutput;
 
     }   
 }
