@@ -27,6 +27,7 @@ public class Utility {
 
 
     /**
+     * Given one input string, extract all the numbers and add them up
      * 
      * @param str Input string provided by user that will be used to add numbesr from 
      * @return Extracts all whole numbers from a given string and returns the sum 
@@ -58,9 +59,10 @@ public class Utility {
 
 
     /**
+     * Given a txt of lines of words, return the longest word on any given line in the file
      * 
      * @param filenametxt name of the file given by user to search through
-     * @return Returns the complete string value of the longest word on any given line in the provided txt file
+     * @return Returns the word as a string
      */
     public static String longestWord(String filenametxt) {
         int lettercount = 0;
@@ -85,8 +87,14 @@ public class Utility {
     }
 
 
-    public static int[] zeroFront(int[] nums) {
 
+    /**
+     * Given an array of integers, move all the 0s to the front with the rest of the values following
+     * 
+     * @param nums Array of integers 
+     * @return Array with zeroes at front followed by original nonzero values
+     */
+    public static int[] zeroFront(int[] nums) {
         int[] arrayIntegers = new int[nums.length];
         int counter = 0;
         for(int x = 0; x < nums.length; x++) {
@@ -108,6 +116,14 @@ public class Utility {
 
     }
 
+
+    /**
+     * Given two arrays, determine whether all the characters in the second array appear in the first
+     * 
+     * @param outer Array of values that is to be checked against the second
+     * @param inner Numbers that must appear in the first array
+     * @return Returns boolean true if all the characters appear, false if they do not. 
+     */
     public static boolean linearIn(int[] outer, int[] inner){
          int numofInner = 0;
 
@@ -131,8 +147,12 @@ public class Utility {
     }
 
 
-    //arrays 7
-
+    /**
+     * Given a 2d array of integers, reverse all values and return a new 2d array
+     * 
+     * @param arr 2d array of integers
+     * @return Returns the original array in reverse order; first number is last and last number is first 
+     */
     public static int[][] reverse(int[][] arr) {
 
         int[][] outputArray = new int[arr.length][arr[0].length];
