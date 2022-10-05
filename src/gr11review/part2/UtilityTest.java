@@ -198,6 +198,7 @@ public class UtilityTest{
         }
     }
   
+    //this uses aboslute path reliant on the user's computer's file strucutre 
     private String absolutePath = "/Users/Noah/github-classroom/SACHSTech/grade-11-review-2---methods-and-testing-noah-nick/src/gr11review/part2/";
     /**
      * Tests for standard string with numbers, also tests consecutive digets
