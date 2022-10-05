@@ -198,7 +198,7 @@ public class UtilityTest{
         }
     }
   
-    private String absPath = "/Users/noah/github-classroom/SACHSTech/grade-11-review-2---methods-and-testing-noah-nick/src/gr11review/part2/";
+    private String absolutePath = "/Users/Noah/github-classroom/SACHSTech/grade-11-review-2---methods-and-testing-noah-nick/src/gr11review/part2/";
     /**
      * Tests for standard string with numbers, also tests consecutive digets
      * 
@@ -235,7 +235,7 @@ public class UtilityTest{
      */
     @Test
     public void longestWordTest1() throws IOException {
-        assertEquals("consectetur", Utility.longestWord(absPath+"words.txt"));
+        assertEquals("consectetur", Utility.longestWord(absolutePath+"words.txt"));
         
     }
 
@@ -245,7 +245,7 @@ public class UtilityTest{
      */
     @Test
     public void longestWordTest2() throws IOException {
-        assertEquals("", Utility.longestWord(absPath+"wordsempty.txt"));
+        assertEquals("", Utility.longestWord(absolutePath+"wordsempty.txt"));
     }
 
 
@@ -255,7 +255,7 @@ public class UtilityTest{
      */
     @Test
     public void longestWordTest3() throws IOException {
-        assertEquals("woeijr", Utility.longestWord(absPath+"wordsdouble.txt"));
+        assertEquals("woeijr", Utility.longestWord(absolutePath+"wordsdouble.txt"));
     }
 
 

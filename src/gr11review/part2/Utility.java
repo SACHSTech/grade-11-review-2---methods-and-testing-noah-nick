@@ -171,15 +171,7 @@ public class Utility {
         return Result;
     }   
 
-    public static void main(String[] args) {
-       
-   
-
-
-        
-        System.out.println(Arrays.toString(zeroFront(new int[]{2, 3, 0, 5, 0})));
-      
-    }
+  
 
 
 
